@@ -11,14 +11,13 @@ window = Tk()
 def home_clicked():
     window.title("Main")
     window.geometry("1920x1080")
-    browse = tkinter.Button(text="click to open browser", command=lambda: browse_clicked())
-    browse.place(x=350, y=100)
-    map = tkinter.Button(text="click for map", command=lambda:  map_clicked())
-    map.place(x=50, y=100)
-    profile = tkinter.Button(text="click for profile")
-    profile.configure(command=lambda: profile_clicked())
-    profile.place(x=200, y=100)
-
+    window.columnconfigure(10)
+    window.rowconfigure(10)
+    Hello = tkinter.Label(text="Welcome").grid(row=1, column=1)
+    placeholder = tkinter.Button().grid(row=2, column=1)
+    browse = tkinter.Button(text="click to open browser", command=lambda: browse_clicked()).grid(row=3, column=3, padx= 10, pady=10)
+    map = tkinter.Button(text="click for map", command=lambda:  map_clicked()).grid(row=3, column=2, padx= 10, pady= 10)
+    profile = tkinter.Button(text="click for profile", command=lambda: profile_clicked()).grid(row=3, column=1, padx= 10, pady= 10)
     window.mainloop()
 
 
